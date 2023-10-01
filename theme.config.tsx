@@ -1,18 +1,66 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import { useConfig } from 'nextra-theme-docs'
 
-const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+let isDevEnvironment =  process.env.NODE_ENV === 'development';
+
+const config = {
+  logoLink: '/',
+  logo: (
+    <>
+      <img width={40} height={40} src={isDevEnvironment ? '/logo.png' : '/mineflayer-guide/logo.png'}/>
+      <span style={{ marginLeft: '.4em', fontWeight: 800, color: '#ffff' }}>
+        Mineflayer
+      </span>
+      <sup style={{ fontWeight: 800, color: '#ffff', top: '-0.0em', left: '0.3em' }}>
+        .py
+      </sup>
+    </>// // this double slash stops IDE from freaking out
+  ),
+  head: () => {
+    const { frontMatter } = useConfig()
+ 
+    return (
+      <>
+        <meta property="og:title" content={frontMatter.title || '🦃'} />
+        <meta property="og:description" content={frontMatter.description || 'A beginner friendly guide for mineflayer.py written by users for users.'}
+        />
+      </>// // this double slash stops IDE from freaking out
+    )
+  },
+  useNextSeoProps: () => {
+    const { frontMatter } = useConfig()
+    return {
+      titleTemplate: '%s – Guide',
+      description: frontMatter.description || 'A beginner friendly guide for mineflayer.py written by users for users.'
+    }
+  },
+  footer: {
+    text: `MIT License ${new Date().getFullYear()}`
+  },
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://github.com/Pix3lPirat3/mineflayer-guide/',
   },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://discord.gg/prismarinejs-413438066984747026',
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
-  footer: {
-    text: 'Nextra Docs Template',
+  nextThemes: {
+    defaultTheme: 'dark'
   },
+  banner: {
+    key: 'pjs-disclaimer',
+    text: 'This is not official documentation for PrismarineJS'
+  },
+  sidebar: {
+    toggleButton: true,
+    defaultMenuCollapseLevel: Infinity
+  },
+  toc: {
+    float: true
+  },
+  docsRepositoryBase: 'https://github.com/Pix3lPirat3/mineflayer-guide/tree/main',
+  feedback: {
+    content: null
+  },
+  primaryHue: 190
 }
 
 export default config

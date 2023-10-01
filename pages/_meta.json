@@ -1,13 +1,15 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "another": "About",
+  "examples": "Getting Started",
+  "discord": "Discord",
+  "llm": "Large Language Models",
   "about": {
-    "title": "About",
+    "title": "API",
     "type": "page"
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": " ↗",
     "type": "page",
     "href": "https://twitter.com/shuding_",
     "newWindow": true
