@@ -1,0 +1,12 @@
+# Cache Issues
+
+
+### Online IDE Cache
+When running an application on an Online IDE (eg: [repl.it](https://replit.com/)) you may run into an issue where you are repeatedly asked to validate your Microsoft account. You'll need to override the setting `profilesFolder` so the cache is stored in a local folder.
+
+
+```python copy
+bot = mineflayer.createBot(
+  profilesFolder='./nmp-cache' # Create a cache folder in the current directory
+)
+```
