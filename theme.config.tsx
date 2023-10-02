@@ -37,21 +37,22 @@ const config = {
     text: `MIT License ${new Date().getFullYear()}`
   },
   project: {
-    link: 'https://github.com/Pix3lPirat3/mineflayer-guide/',
+    link: 'https://github.com/SilkePilon/OpenDeliveryBot-Docs/',
   },
   chat: {
-    link: 'https://discord.gg/prismarinejs-413438066984747026',
+    link: 'https://discord.gg/8udMqB887G',
   },
   nextThemes: {
     defaultTheme: 'dark'
   },
   banner: {
     key: 'pjs-disclaimer',
-    text: 'This is not official documentation for PrismarineJS'
+    text: 'This is not a official package from PrismarineJS'
   },
   sidebar: {
     toggleButton: true,
-    defaultMenuCollapseLevel: Infinity
+    defaultMenuCollapseLevel: 1,
+    autoCollapse: true
   },
   toc: {
     float: true
