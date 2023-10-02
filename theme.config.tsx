@@ -51,7 +51,7 @@ const config = {
   },
   sidebar: {
     toggleButton: true,
-    defaultMenuCollapseLevel: 1,
+    defaultMenuCollapseLevel: 3,
     autoCollapse: true
   },
   toc: {
