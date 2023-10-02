@@ -4,6 +4,7 @@
   "issues": "Common Issues",
   "discord": "Discord",
   "llm": "Large Language Models",
+  "guides": "Guides",
   "about": {
     "title": "API",
     "type": "page"
