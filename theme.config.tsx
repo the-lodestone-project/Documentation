@@ -6,7 +6,7 @@ const config = {
   logoLink: '/',
   logo: (
     <>
-      <img width={40} height={40} src={isDevEnvironment ? '/logo.png' : 'https://raw.githubusercontent.com/SilkePilon/OpenDeliveryBot-Docs/main/public/logo.png'}/>
+      <img width={30} height={30} src={isDevEnvironment ? '/logo.png' : 'https://raw.githubusercontent.com/SilkePilon/OpenDeliveryBot-Docs/main/public/logo.png'}/>
       <span style={{ marginLeft: '.4em', fontWeight: 800, color: '#ffff' }}>
         Mineflayer
       </span>
@@ -21,7 +21,7 @@ const config = {
     return (
       <>
         <meta property="og:title" content={frontMatter.title || '🦃'} />
-        <meta property="og:description" content={frontMatter.description || 'A beginner friendly guide for mineflayer.py written by users for users.'}
+        <meta property="og:description" content={frontMatter.description || 'A beginner friendly guide for mineflayer.py'}
         />
       </>// // this double slash stops IDE from freaking out
     )
@@ -30,11 +30,11 @@ const config = {
     const { frontMatter } = useConfig()
     return {
       titleTemplate: '%s – Guide',
-      description: frontMatter.description || 'A beginner friendly guide for mineflayer.py written by users for users.'
+      description: frontMatter.description || 'A beginner friendly guide for mineflayer.py'
     }
   },
   footer: {
-    text: `MIT License ${new Date().getFullYear()}`
+    text: `MIT License ${new Date().getFullYear()} Mineflayer.py`
   },
   project: {
     link: 'https://github.com/SilkePilon/OpenDeliveryBot-Docs/',
@@ -51,13 +51,13 @@ const config = {
   },
   sidebar: {
     toggleButton: true,
-    defaultMenuCollapseLevel: 2,
-    autoCollapse: true
+    defaultMenuCollapseLevel: 0,
+    autoCollapse: false
   },
   toc: {
     float: true
   },
-  docsRepositoryBase: 'https://github.com/Pix3lPirat3/mineflayer-guide/tree/main',
+  docsRepositoryBase: 'https://github.com/SilkePilon/Mineflayer.py-docs/tree/main',
   feedback: {
     content: null
   },
