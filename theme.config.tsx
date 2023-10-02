@@ -6,7 +6,7 @@ const config = {
   logoLink: '/',
   logo: (
     <>
-      <img width={40} height={40} src={isDevEnvironment ? '/logo.png' : '/mineflayer-guide/logo.png'}/>
+      <img width={40} height={40} src={isDevEnvironment ? '/logo.png' : '/public/logo.png'}/>
       <span style={{ marginLeft: '.4em', fontWeight: 800, color: '#ffff' }}>
         Mineflayer
       </span>
