@@ -6,7 +6,7 @@ const config = {
   logoLink: '/',
   logo: (
     <>
-      <img width={40} height={40} src={isDevEnvironment ? '/logo.png' : '/public/logo.png'}/>
+      <img width={40} height={40} src={isDevEnvironment ? '/logo.png' : 'https://raw.githubusercontent.com/SilkePilon/OpenDeliveryBot-Docs/main/public/logo.png'}/>
       <span style={{ marginLeft: '.4em', fontWeight: 800, color: '#ffff' }}>
         Mineflayer
       </span>
