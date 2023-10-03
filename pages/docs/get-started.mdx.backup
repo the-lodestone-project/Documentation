@@ -58,7 +58,7 @@ export default {
 }
 ```
 
-import { Callout } from 'Lodestone/components'
+import { Callout } from 'nextra/components'
 
 <Callout>
   More configuration options for the docs theme can be found
