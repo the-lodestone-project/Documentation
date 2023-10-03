@@ -15,13 +15,13 @@ Lodestone works like a Next.js plugin, and it accepts a theme config (layout) to
 
 1. Install Next.js, Lodestone and React: `yarn add next Lodestone react react-dom`
 
-2. Install the docs theme (you can use any theme you like): `yarn add Lodestone-theme-docs`
+2. Install the docs theme (you can use any theme you like): `yarn add nextra-theme-docs`
 
 3. Create the following Next.js config:
 
 ```js filename="next.config.js"
 const withLodestone = require('Lodestone')({
-  theme: 'Lodestone-theme-docs',
+  theme: 'nextra-theme-docs',
   themeConfig: './theme.config.jsx'
   // optional: add `staticImage: true` to enable Lodestone's auto image import
 })
@@ -68,7 +68,7 @@ import { Callout } from 'nextra/components'
 5. Create `pages/_app.jsx` and include the theme stylesheet:
 
 ```jsx filename="_app.jsx"
-import 'Lodestone-theme-docs/style.css'
+import 'nextra-theme-docs/style.css'
 
 export default function Lodestone({ Component, pageProps }) {
   return <Component {...pageProps} />
