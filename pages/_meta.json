@@ -5,6 +5,7 @@
   "issues": "Common Issues",
   "discord": "Discord",
   "llm": "Large Language Models",
+  "API": "API",
   "about": {
     "title": "API",
     "type": "page"
