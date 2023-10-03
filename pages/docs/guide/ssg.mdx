@@ -10,7 +10,7 @@ This is supported by Lodestone too. Here's an example:
 import { useData } from 'nextra/data'
 
 export const getStaticProps = ({ params }) => {
-  return fetch(`https://api.github.com/repos/silkepilon/mineflayerpy-docs`)
+  return fetch(`https://api.github.com/repos/SilkePilon/Mineflayer.py-Docs`)
     .then(res => res.json())
     .then(repo => ({
       props: {
@@ -47,7 +47,7 @@ Here's the MDX code for the example above:
 import { useData } from 'Lodestone/data'
 
 export const getStaticProps = ({ params }) => {
-  return fetch(`https://api.github.com/repos/silkepilon/mineflayerpy-docs`)
+  return fetch(`https://api.github.com/repos/SilkePilon/Mineflayer.py-Docs`)
     .then(res => res.json())
     .then(repo => ({
       props: {
