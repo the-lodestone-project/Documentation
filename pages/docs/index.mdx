@@ -1,0 +1,62 @@
+# Lodestone
+
+**Lodestone** is a framework on top of Mineflayer, that lets you build powerfull Minecraft bots.
+It has all the great features from Mineflayer, plus extra features like.
+## Quick Start
+
+import { Cards } from 'nextra/components'
+
+To start using Lodestone, you need to select a interface type first:
+
+<Cards num={2}>
+  <Cards.Card
+    image
+    arrow
+    title="The Coding Way"
+    href="/docs/docs-theme/start"
+  >
+    <>![The Coding Way](/assets/docs-theme.png)</>
+  </Cards.Card>
+  <Cards.Card image arrow title="The Website Way" href="/docs/blog-theme/start">
+    <>![The Website Way](/assets/blog-theme.png)</>
+  </Cards.Card>
+</Cards>
+
+If you want to use Lodestone from the terminal, you can follow
+the [examples here](/docs/custom-theme).
+
+## Lodestone FAQ
+
+The Lodestone FAQ is a collection of useful questions and answers about the
+project. If you have a question that isn't answered here, please
+[open a discussion](https://github.com/shuding/Lodestone/discussions).
+
+export function FAQBox({ title, children }) {
+  return (
+    <details
+      open
+      className="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4"
+    >
+      <summary>
+        <strong className="text-lg">{title}</strong>
+      </summary>
+      <div className="nx-p-2">{children}</div>
+    </details>
+  )
+}
+
+<FAQBox title="Can I use X with Lodestone?">
+  The answer is “yes” for most things. Since Lodestone is just a Next.js plugin, almost all the things
+  that can be done with React can be done with Lodestone. Here are some examples and guides:
+
+- [Use Tailwind CSS](/docs/guide/tailwind-css)
+- [Use custom CSS and Sass](/docs/guide/custom-css)
+- [Use custom fonts](https://nextjs.org/docs/basic-features/font-optimization)
+
+</FAQBox>
+
+<FAQBox title="How can I add a live coding component in Lodestone?">
+  There are libraries like [Sandpack](https://sandpack.codesandbox.io) and
+  [react-live](https://github.com/FormidableLabs/react-live) that can help you
+  add live coding components to your MDX.
+</FAQBox>

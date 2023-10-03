@@ -1,0 +1,88 @@
+import { Callout, Steps } from 'nextra/components'
+
+# Get Started
+
+<Callout type="warning">Docs for this theme is under construction.</Callout>
+
+<Callout>
+  An example of the blog theme can be found [here](https://demo.vercel.blog).
+</Callout>
+
+Similar to the [Docs Theme](/docs/docs-theme/start), you can install the blog
+theme with the following commands:
+
+## Quick Start from Template
+
+## Start as New Project
+
+<Steps>
+### Install
+
+To create a Lodestone Docs site manually, you have to install **Next.js**,
+**React**, **Lodestone**, and **Lodestone Blog Theme**. In your project directory, run
+the following command to install the dependencies:
+
+```sh npm2yarn
+npm i next react react-dom Lodestone Lodestone-theme-blog
+```
+
+<Callout>
+  If you already have Next.js installed in your project, you only need to
+  install `Lodestone` and `Lodestone-theme-blog` as the add-ons.
+</Callout>
+
+### Add Next.js Config
+
+Create the following `next.config.js` file in your project’s root directory:
+
+```js filename="next.config.js"
+const withLodestone = require('Lodestone')({
+  theme: 'Lodestone-theme-blog',
+  themeConfig: './theme.config.jsx'
+})
+
+module.exports = withLodestone()
+
+// If you have other Next.js configurations, you can pass them as the parameter:
+// module.exports = withLodestone({ /* other next.js config */ })
+```
+
+With the above configuration, Lodestone can handle Markdown files in your Next.js
+project, with the specified theme. Other Lodestone configurations can be found in
+[Guide](/docs/guide).
+
+### Create Blog Theme Config
+
+Lastly, create the corresponding `theme.config.jsx` file in your project’s root
+directory. This will be used to configure the Lodestone Blog theme:
+
+```jsx filename="theme.config.jsx"
+export default {
+  footer: <p>MIT 2023 © Lodestone.</p>,
+  head: ({ title, meta }) => (
+    <>
+      {meta.description && (
+        <meta name="description" content={meta.description} />
+      )}
+      {meta.tag && <meta name="keywords" content={meta.tag} />}
+      {meta.author && <meta name="author" content={meta.author} />}
+    </>
+  ),
+  readMore: 'Read More →',
+  postFooter: null,
+  darkMode: false,
+  navs: [
+    {
+      url: 'https://github.com/shuding/Lodestone',
+      name: 'Lodestone'
+    }
+  ]
+}
+```
+
+### Ready to Go!
+
+Now, you can run the `next` or `next dev` command specified in `package.json` to
+start developing the project! 🎉
+
+</Steps>

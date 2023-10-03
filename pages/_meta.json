@@ -1,19 +1,36 @@
 {
-  "index": "Introduction",
-  "examples": "Getting Started",
-  "new": "New Things",
-  "issues": "Common Issues",
-  "discord": "Discord",
-  "llm": "Large Language Models",
-  "API": "API",
-  "about": {
-    "title": "API",
-    "type": "page"
-  },
-  "contact": {
-    "title": "Replit ↗",
+  "index": {
     "type": "page",
-    "href": "https://twitter.com/shuding_",
-    "newWindow": true
+    "title": "Lodestone",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "docs": {
+    "type": "page",
+    "title": "Documentation"
+  },
+  "showcase": {
+    "type": "page",
+    "title": "Showcase",
+    "theme": {
+      "typesetting": "article",
+      "layout": "full"
+    }
+  },
+  "about": {
+    "type": "page",
+    "title": "About",
+    "theme": {
+      "typesetting": "article"
+    }
+  },
+  "404": {
+    "type": "page",
+    "theme": {
+      "timestamp": false,
+      "typesetting": "article"
+    }
   }
 }
