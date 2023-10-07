@@ -1,0 +1,90 @@
+import { BoxIcon, GearIcon, RowsIcon } from '@components/icons'
+import { Callout, Card, Cards, Steps } from 'nextra/components'
+
+# 2b2t.org
+
+Lodestone fully supports playing on 2b2t.org!
+
+
+
+{/* ## Deploy to Replit
+
+You can start by creating your own Lodestone site and deploying to Vercel by
+clicking the link:
+
+<a
+  className="mt-3 inline-flex"
+  target="_blank"
+  href="https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2FLodestone-docs-template&showOptionalTeamCreation=false"
+>
+  ![](https://vercel.com/button)
+</a>
+
+Vercel will fork the
+[Lodestone Docs template](https://github.com/shuding/Lodestone-docs-template) and
+deploy the site for you. Once done, every commit in the repository will be
+deployed automatically. */}
+
+
+## How to join 2b2t.org
+
+<Steps>
+### Create a bot
+
+<Callout>
+  When coding a bot to play on 2b2t you need to make sure to set the `host` to `connect.2b2t.org` instead of `2b2t.org`.
+</Callout>
+
+Create the following `bot.py` file in your project’s root directory:
+
+```python filename="2b2t.py"
+import lodestone
+
+mcbot = lodestone.createBot(
+  host='connect.2b2t.org',
+  username='YOUR EMAIL',
+  auth='microsoft',
+  enableChatLogging=True # makes a database for the server and logs all the messages
+)
+
+@lodestone.Event(mcbot.bot, 'messagestr')
+def chat(this, message, messagePosition, jsonMsg, sender, *args):
+    message = str(message).replace("\n\n","")
+    print(f"{sender}: {message}") # prints the position in the queue messages
+
+print(mcbot.chatHistory(username="hausemaster")) # prints all the messages from this player
+```
+
+With the above configuration, Lodestone will create a bot that joins `2b2t.org` and uses the `messagestr` event to print the position in the queue. It also print the chat history of `hausemaster`. Other Lodestone bot creation configurations can be found
+[Here](/docs/lodestone/bot-configuration).
+
+
+### Run your bot
+
+After coding your very own Minecraft 2b2t bot you can simply run the following command to start the bot!:
+
+```
+# can be python3 on some systems
+python 2b2t.py
+```
+</Steps>
+
+Next, check out the next section to learn about configuring the bot:
+
+<Cards>
+  <Card
+    icon={<RowsIcon />}
+    title="Bot Configuration"
+    href="/docs/lodestone/bot-configuration"
+  />
+  {/* <Card
+    icon={<GearIcon />}
+    title="Theme Configuration"
+    href="/docs/docs-theme/theme-configuration"
+  />
+  <Card
+    icon={<BoxIcon />}
+    title="Built-in Components"
+    href="/docs/docs-theme/built-ins"
+  /> */}
+</Cards>

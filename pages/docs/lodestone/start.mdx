@@ -3,13 +3,27 @@ import { Callout, Card, Cards, Steps } from 'nextra/components'
 
 # Lodestone: Getting Started
 
-Lodestone Docs Theme is a theme that includes almost everything you need to build a
-modern documentation website. It includes a top navigation bar, a search bar, a
-pages sidebar, a TOC sidebar, and other built-in components.
+Lodestone is a project that includes almost everything you need to build a
+Minecraftbot.
 
-This website itself is built with the Lodestone Docs Theme.
 
-## Deploy to Replit
+* Supports Minecraft 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19 and 1.20.
+* Entity knowledge and tracking.
+* Block knowledge. You can query the world around you. Milliseconds to find any block.
+* Physics and movement - handle all bounding boxes
+* Attacking entities and using vehicles.
+* Inventory management.
+* Crafting, chests, dispensers, enchantment tables.
+* Digging and building.
+* Miscellaneous stuff such as knowing your health and whether it is raining.
+* Activating blocks and using items.
+* Chat.
+
+
+**Let's get started!**
+
+
+{/* ## Deploy to Replit
 
 You can start by creating your own Lodestone site and deploying to Vercel by
 clicking the link:
@@ -25,7 +39,7 @@ clicking the link:
 Vercel will fork the
 [Lodestone Docs template](https://github.com/shuding/Lodestone-docs-template) and
 deploy the site for you. Once done, every commit in the repository will be
-deployed automatically.
+deployed automatically. */}
 
 
 ## Start a New Project
@@ -33,17 +47,17 @@ deployed automatically.
 <Steps>
 ### Install
 
-To create a Lodestone Docs site manually, you have to install **Next.js**,
-**React**, **Lodestone**, and **Lodestone Docs Theme**. In your project directory, run
-the following command to install the dependencies:
+To start **building** a **Lodestone** based bot, you first have to install the **lodestone**,
+package. 
+run the following command to install the package:
 
-```sh copy
+```pip copy
 pip install lodestone
 ```
 
 <Callout>
-  If you already have Next.js installed in your project, you only need to
-  install `Lodestone` and `nextra-theme-docs` as the add-ons.
+  If you already have the lodestone package installed you can skip this step, you only need to
+  install `lodestone` for the bot to work.
 </Callout>
 
 ### Create a bot.py
@@ -51,74 +65,56 @@ pip install lodestone
 Create the following `bot.py` file in your project’s root directory:
 
 ```python filename="bot.py"
-# import the package
-import mineflayer
- 
-# create the bot
-bot = mineflayer.createBot(
-  host='localhost',          # minecraft server ip
-  username='Bot',            # username or email, switch if you want to change accounts
-  auth='microsoft'           # for offline mode servers, you can set this to 'offline'
-  # port=25565,              # only set if you need a port that isn't 25565
-  # version='false',         # only set if you need a specific version or snapshot (ie: "1.8.9" or "1.16.5"), otherwise it's set automatically
-  # password='12345678'      # set if you want to use password-based auth (may be unreliable). If specified, the `username` must be an email
+import lodestone
+
+bot = lodestone.createBot(
+  host='localhost',
+  username='Bot',
 )
- 
-# do not run code here that needs acces to the bot!
- 
-# start the bot
-bot.start()
- 
-# run code on the bot here!
 ```
 
-With the above configuration, Lodestone can handle Markdown files in your Next.js
-project, with the specified theme. Other Lodestone configurations can be found in
-[Guide](/docs/guide).
+With the above configuration, Lodestone will create a bot with the name `bot` that joins the java server `localhost` (localy run server). Other Lodestone bot creation configurations can be found
+[Here](/docs/lodestone/bot-configuration).
 
-### Sign in
 
-Lastly, create the corresponding `theme.config.jsx` file in your project’s root
-directory. This will be used to configure the Lodestone Docs theme:
+### Run your bot
 
-```jsx filename="theme.config.jsx"
-export default {
-  logo: <span>My Lodestone Documentation</span>,
-  project: {
-    link: 'https://github.com/shuding/Lodestone'
-  }
-  // ... other theme options
-}
-```
+After coding your very own Minecraft bot you can simply run the following command to start the bot!:
 
-Full theme configurations can be found
-[here](/docs/docs-theme/theme-configuration).
-
-### Ready to Go!
-
-Now, you can create your first MDX page as `pages/index.mdx`:
-
-```mdx filename="pages/index.mdx"
-# Welcome to Lodestone
-
-Hello, world!
+```bash filename="Terminal"
+# can be python3 on some systems
+python bot.py
 ```
 
 And run the `next` or `next dev` command specified in `package.json`to start
 developing the project! 🎉
 
+
+### Sign in
+
+Lastly, if your not already signed in bot will ask you to sign in using Microsoft by default. The message will look something like this:
+
+```
+It seems you are not logged in, please go to https://microsoft.com/link and enter the following code: ********
+```
+
+after you sucsessfully sign in in to your account account the bot will be created.
+
+Full auth configurations can be found
+[here](/).
+
+
 </Steps>
 
-Next, check out the next section to learn about organizing the documentation
-structure and configuring the website theme:
+Next, check out the next section to learn about configuring the bot:
 
 <Cards>
   <Card
     icon={<RowsIcon />}
-    title="Page Structure"
-    href="/docs/docs-theme/page-configuration"
+    title="Bot Configuration"
+    href="/docs/lodestone/bot-configuration"
   />
-  <Card
+  {/* <Card
     icon={<GearIcon />}
     title="Theme Configuration"
     href="/docs/docs-theme/theme-configuration"
@@ -127,5 +123,5 @@ structure and configuring the website theme:
     icon={<BoxIcon />}
     title="Built-in Components"
     href="/docs/docs-theme/built-ins"
-  />
+  /> */}
 </Cards>

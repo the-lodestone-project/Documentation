@@ -1,7 +1,6 @@
 {
   "start": "Get Started",
-  "page-configuration": "",
-  "theme-configuration": "",
-  "built-ins": "Built-ins",
+  "bot-configuration": "",
+  "servers": "Special Servers",
   "api": "API"
 }

@@ -1,0 +1,148 @@
+# Bot Configuration
+
+At the core of creating a bot using **Lodestone** is the function `lodestone.createBot`, this is where you'll want to declare the variable used for the bot, as well as setting the options for your bot such as the target server's ip (`host`), port (`port`), version (`version`), the type of authentication (`auth`), and your username (`username`).
+
+import { Screenshot } from 'components/screenshot'
+import Video from 'components/video'
+import { Callout, FileTree } from 'nextra/components'
+import { OptionTable } from 'components/table'
+import menuImage from '../../../public/assets/docs/menu.png'
+
+{/* <Callout>
+  Read more about Lodestone's `createBot` files
+  [here](/docs/guide/organize-files).
+</Callout> */}
+
+## createBot Configuration
+<OptionTable
+  options={[
+    [
+      'host',
+      'str',
+      'The domain or IP for the target server (eg. 127.0.0.1, or play.example.com), the domain is resolved to the IP address. If the server prevents you from logging in using the domain (eg. TCP Shield) try using the fakeHost option.'
+    ],
+    [
+      'auth',
+      '',
+      'The type of authentication to use for the account. Using Microsoft without a password field is recommended.'
+    ],
+    [
+      'port',
+      'int',
+      'The port of the target server. Defaults to 25565.'
+    ],
+    [
+      'version',
+      'str',
+      'The version of the target server. Defaults to auto.'
+    ],
+    [
+      'password',
+      'str',
+      'Not recommended.'
+    ],
+    [
+      'checkTimeoutInterval',
+      'int',
+      'The time to check if the bot is still conected to the server. Defaults to 20.'
+    ],
+    [
+      'armorManager',
+      'bool',
+      'If the bot needs to apply all avalable armor. Defaults to False.'
+    ],
+    [
+      'viewerPort',
+      'int',
+      'The port prismarine viewer runs on. Defaults to 5001'
+    ],
+    [
+      'disableChatSigning',
+      'bool',
+      'If the chat needs to be singed. Defaults to False'
+    ],
+    [
+      'profilesFolder',
+      'str',
+      'The folder lodestone keeps your login info. Defaults to .minecraft/ or node_modules/'
+    ],
+    [
+      'username',
+      'str',
+      'The userame key will be used as key to store your login. Defaults to "lodestone"'
+    ],
+    [
+      'discordWebhook',
+      'str',
+      'Allows the bot to send updates to Discord. Defaults to None'
+    ],
+    [
+      'logErrors',
+      'bool',
+      'Defaults to True'
+    ],
+    [
+      'hideErrors',
+      'bool',
+      'Defaults to True'
+    ],
+    [
+      'keepAlive',
+      'bool',
+      'Defaults to True'
+    ],
+    [
+      'loadInternalPlugins',
+      'bool',
+      'Defaults to True'
+    ],
+    [
+      'respawn',
+      'bool',
+      'Defaults to True'
+    ],
+    [
+      'physicsEnabled',
+      'bool',
+      'Defaults to True'
+    ],
+    [
+      'defaultChatPatterns',
+      'bool',
+      'Defaults to True'
+    ],
+    [
+      'disableLogs',
+      'bool',
+      'Defaults to False'
+    ],
+    [
+      'enableChatLogging',
+      'bool',
+      'Defaults to False'
+    ],
+    [
+      'skipChecks',
+      'bool',
+      'Defaults to False'
+    ],
+    
+    
+  ]}
+/>
+
+<FileTree>
+  <FileTree.Folder name="pages" defaultOpen>
+    <FileTree.File name="_meta.json" />
+    <FileTree.File name="about.mdx" />
+    <FileTree.File name="contact.mdx" />
+    <FileTree.File name="index.mdx" />
+  </FileTree.Folder>
+</FileTree>
+
+
+
+{/* <div className="mt-4 text-center text-sm">
+  [Live example on StackBlitz
+  ↗](https://stackblitz.com/edit/Lodestone-2-docs-hg77h3?file=pages%2F_meta.json,pages%2Findex.mdx)
+</div> */}
