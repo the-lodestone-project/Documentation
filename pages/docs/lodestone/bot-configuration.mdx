@@ -8,10 +8,9 @@ import { Callout, FileTree } from 'nextra/components'
 import { OptionTable } from 'components/table'
 import menuImage from '../../../public/assets/docs/menu.png'
 
-{/* <Callout>
-  Read more about Lodestone's `createBot` files
-  [here](/docs/guide/organize-files).
-</Callout> */}
+<Callout>
+  `discordWebhook` is not working as expected at the moment dude to a switch in framework. Expect this to work again soon!
+</Callout>
 
 ## createBot Configuration
 <OptionTable
@@ -124,21 +123,26 @@ import menuImage from '../../../public/assets/docs/menu.png'
     [
       'skipChecks',
       'bool',
-      'Defaults to False'
+      'Skips the Defaults to False'
+    ],
+    [
+      'disableViewer',
+      'bool',
+      'Enabels the prismarine-viewer plugin. Defaults to False'
     ],
     
     
   ]}
 />
 
-<FileTree>
+{/* <FileTree>
   <FileTree.Folder name="pages" defaultOpen>
     <FileTree.File name="_meta.json" />
     <FileTree.File name="about.mdx" />
     <FileTree.File name="contact.mdx" />
     <FileTree.File name="index.mdx" />
   </FileTree.Folder>
-</FileTree>
+</FileTree> */}
 
 
 
