@@ -1,0 +1,48 @@
+## Registering custom commands
+
+<Steps>
+### Install
+
+To start using **custom commands** you need an **Lodestone** bot:
+
+```python copy
+import lodestone
+
+bot = lodestone.createBot(
+  host='localhost',
+  username='Bot',
+)
+```
+
+### Create a custom command
+
+Now that the bot is made you can register the command!
+registering a command only takes 2 parameters by default:
+`command_name` (str): the name of the command and the string the bot will listen to.
+`return_str` (str): String to return when command is called.
+
+You can also pass these optional parameters:
+`sender` (optional): Only respond if sender matches this value.
+`function` (optional): Custom function to call instead of return_str.
+`whisper` (bool): Whether to whisper the response or send publicly.
+
+
+```python filename="bot.py"
+bot.register_command("!hello", return_str="Hello there!")
+```
+
+
+### Custom command function
+
+`bot.register_command` also offers an custom function to run instead of the `return_str`
+this can be done in the following way:
+
+```python filename="bot.py"
+def hello_message(sender, message, *args):
+  print(f"I've send the following message to {sender}: {message}")
+
+mcbot.register_command("!hello", function=hello_message)
+```
+
+
+</Steps>

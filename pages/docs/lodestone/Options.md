@@ -1,42 +1,3 @@
-# Bot
-
-### mineflayer.createBot(options)
-
-Create and return an instance of the class bot.
-`options` is an object containing the optional properties :
-
-* username : default to 'Player'
-* port : default to 25565
-* password : can be omitted (if the tokens are also omitted then it tries to connect in offline mode)
-* host : default to localhost
-* version : default to automatically guessing the version of the server. Example of value : "1.12.2"
-* auth : default to 'mojang', can also be 'microsoft'
-* clientToken : generated if a password is given
-* accessToken : generated if a password is given
-* logErrors : true by default, catch errors and log them
-* hideErrors : true by default, do not log errors (even if logErrors is true)
-* keepAlive : send keep alive packets : default to true
-* checkTimeoutInterval : default to `30*1000` (30s), check if keepalive received at that period, disconnect otherwise.
-* loadInternalPlugins : defaults to true
-* storageBuilder : an optional function, takes as argument version and worldName and return an instance of something with the same API as prismarine-provider-anvil. Will be used to save the world.
-* client : an instance of node-minecraft-protocol, if not specified, mineflayer makes it's own client. This can be used to enable using mineflayer through a proxy of many clients or a vanilla client and a mineflayer client.
-* brand : the brand name for the client to use. Defaults to vanilla. Can be used to simulate custom clients for servers that require it.
-* respawn : when set to false disables bot from automatically respawning, defaults to true.
-* plugins : object : defaults to {}
-  - pluginName : false : don't load internal plugin with given name ie. `pluginName`
-  - pluginName : true : load internal plugin with given name ie. `pluginName` even though loadInternalplugins is set to false
-  - pluginName : external plugin inject function : loads external plugin, overrides internal plugin with given name ie. `pluginName`
-* physicsEnabled : true by default, should the bot be affected by physics? can later be modified via bot.physicsEnabled
-* [chat](#bot.settings.chat)
-* [colorsEnabled](#bot.settings.colorsEnabled)
-* [viewDistance](#bot.settings.viewDistance)
-* [difficulty](#bot.settings.difficulty)
-* [skinParts](#bot.settings.skinParts)
-* [enableTextFiltering](#bot.settings.enableTextFiltering)
-* [enableServerListing](#bot.settings.enableServerListing)
-* chatLengthLimit : the maximum amount of characters that can be sent in a single message. If this is not set, it will be 100 in < 1.11 and 256 in >= 1.11.
-* defaultChatPatterns: defaults to true, set to false to not add the patterns such as chat and whisper
-
 ### Properties
 
 #### bot.registry
@@ -1000,7 +961,7 @@ function somePlugin (bot, options) {
   bot.myPlugin.someFunction = someFunction
 }
 
-const bot = mineflayer.createBot({})
+const bot = lodestone.createBot({})
 bot.loadPlugin(somePlugin)
 bot.once('login', function () {
   bot.myPlugin.someFunction() // Yay!
@@ -1354,7 +1315,7 @@ All options attributes are false by default, except mode which is 2 (as to repli
 
 This can be used to check is a specific feature is available in the current Minecraft version. This is usually only required for handling version-specific functionality.
 
-The list of available features can be found inside the [./lib/features.json](https://github.com/PrismarineJS/mineflayer/blob/master/lib/features.json) file.
+The list of available features can be found inside the [./lib/features.json](https://github.com/PrismarineJS/lodestone/blob/master/lib/features.json) file.
 
 #### bot.waitForTicks(ticks)
 
