@@ -18,11 +18,11 @@ import menuImage from '../../../public/assets/docs/menu.png'
     [
       'host',
       'str',
-      'The domain or IP for the target server (eg. 127.0.0.1, or play.example.com), the domain is resolved to the IP address. If the server prevents you from logging in using the domain (eg. TCP Shield) try using the fakeHost option.'
+      'The domain or IP for the target server (eg. 127.0.0.1, or play.example.com), the domain is resolved to the IP address.'
     ],
     [
       'auth',
-      '',
+      "Literal['micosoft', 'offline']",
       'The type of authentication to use for the account. Using Microsoft without a password field is recommended.'
     ],
     [
@@ -33,7 +33,7 @@ import menuImage from '../../../public/assets/docs/menu.png'
     [
       'version',
       'str',
-      'The version of the target server. Defaults to auto.'
+      'The version of the target server. Defaults to "auto".'
     ],
     [
       'password',
@@ -68,7 +68,7 @@ import menuImage from '../../../public/assets/docs/menu.png'
     [
       'username',
       'str',
-      'The userame key will be used as key to store your login. Defaults to "lodestone"'
+      'The username key will be used as key to store your login. Defaults to "lodestone"'
     ],
     [
       'discordWebhook',
@@ -128,7 +128,7 @@ import menuImage from '../../../public/assets/docs/menu.png'
     [
       'disableViewer',
       'bool',
-      'Enabels the prismarine-viewer plugin. Defaults to False'
+      'Enables the prismarine-viewer plugin. Defaults to False'
     ],
     [
       'ls_skip_checks',
